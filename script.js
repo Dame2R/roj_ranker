@@ -66,6 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
             resetStars(stars);
             document.getElementById(question.feedbackId).textContent = '';
         });
-        alert('Dein Rating wurde gespeichert! (nicht wirklich lols)');
+        alert('Dein Rating wurde gespeichert! (nicht wirklich lol)');
     });
 });
