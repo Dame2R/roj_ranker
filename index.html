@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roj Ranker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Herzlich Willkommen, wir befinden uns noch in der Entwicklungsphase, aber Sie können sich selbst schon
+                einmal raten!</h1>
+        </header>
+
+        <main>
+            <section class="content">
+                <p>Hey Baby, hab viel Spaß dabei dich selbst zu raten!</p>
+            </section>
+
+            <section class="survey">
+                <h2>Survey</h2>
+                <form id="survey-form">
+                    <div class="question">
+                        <label for="question1">Wie süß schätzt du dich ein?</label>
+                        <input type="range" id="question1" name="question1" min="1" max="5" value="">
+                        <span class="feedback" id="feedback1"></span>
+                    </div>
+
+                    <div class="question">
+                        <label for="question2">Wie würdest du dein Aussehen raten?</label>
+                        <input type="range" id="question2" name="question2" min="1" max="5" value="">
+                        <span class="feedback" id="feedback2"></span>
+                    </div>
+
+                    <div class="question">
+                        <label for="question3">Für wie außergewöhnlich hältst du dich?</label>
+                        <input type="range" id="question3" name="question2" min="1" max="5" value="">
+                        <span class="feedback" id="feedback3"></span>
+                    </div>
+
+                    <div class="question">
+                        <label for="question4">Wie schätzt du deine Fähigkeit Snacks zu besorgen ein?</label>
+                        <input type="range" id="question4" name="question2" min="1" max="5" value="">
+                        <span class="feedback" id="feedback4"></span>
+                    </div>
+
+                    <div class="question">
+                        <label for="question5">Wie gut denkst du ist deine Sehfähigkeit?</label>
+                        <input type="range" id="question5" name="question2" min="1" max="5" value="">
+                        <span class="feedback" id="feedback5"></span>
+                    </div>
+
+                    <button type="button" id="save-button">Save</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
