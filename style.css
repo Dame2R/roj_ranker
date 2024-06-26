@@ -46,14 +46,16 @@ label {
 .star {
     font-size: 2em;
     color: #ccc;
+    cursor: pointer;
     transition: color 0.2s;
 }
 
+.star.highlighted,
 .star.selected,
-.star:hover,
-.star:hover ~ .star {
-    color: #fda085;
+.star:hover {
+    color: #fda085; /* Anpassung, damit die Farbe gleich bleibt */
 }
+
 
 .feedback {
     display: block;
