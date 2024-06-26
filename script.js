@@ -7,27 +7,49 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 'question5', feedbackId: 'feedback5', requiredValue: 2, feedbackMessage: 'Delusional..' },
     ];
 
-    questions.forEach(question => {
-        const questionElement = document.getElementById(question.id);
+    questions.forEach((question, index) => {
+        const stars = document.querySelectorAll(`.stars[data-question="${index + 1}"] .star`);
         const feedbackElement = document.getElementById(question.feedbackId);
 
-        questionElement.addEventListener('input', function () {
-            if (questionElement.value != question.requiredValue) {
-                questionElement.value = "";  // Setzt den Wert auf keine Auswahl zurück
-                feedbackElement.textContent = question.feedbackMessage;  // Zeigt die Nachricht an
-            } else {
-                feedbackElement.textContent = "";
-            }
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const value = this.getAttribute('data-value');
+                if (value != question.requiredValue) {
+                    resetStars(stars);
+                    feedbackElement.textContent = question.feedbackMessage;
+                } else {
+                    feedbackElement.textContent = '';
+                    selectStars(stars, value);
+                }
+            });
         });
     });
+
+    function resetStars(stars) {
+        stars.forEach(star => {
+            star.classList.remove('selected');
+        });
+    }
+
+    function selectStars(stars, value) {
+        stars.forEach(star => {
+            if (star.getAttribute('data-value') <= value) {
+                star.classList.add('selected');
+            } else {
+                star.classList.remove('selected');
+            }
+        });
+    }
 
     const saveButton = document.getElementById('save-button');
     saveButton.addEventListener('click', function () {
         const surveyForm = document.getElementById('survey-form');
         surveyForm.reset();
         questions.forEach(question => {
-            document.getElementById(question.feedbackId).textContent = "";
+            document.getElementById(question.feedbackId).textContent = '';
+            const stars = document.querySelectorAll(`.stars[data-question="${question.id.replace('question', '')}"] .star`);
+            resetStars(stars);
         });
-        alert('Danke. Deine Antworten wurden gespeichert! (nicht wirklich lol)');
+        alert('Your responses have been saved! (not really)');
     });
 });
