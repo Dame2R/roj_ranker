@@ -27,7 +27,7 @@ header {
     background: #222; /* Dunkle Farbe, um den Text abzuheben */
     padding: 10px 20px;
     z-index: 1000; /* Stellen Sie sicher, dass der Header über anderen Elementen schwebt */
-    width: 100%;
+    width: 90%;
     text-align: justify;
     margin-bottom: 20px;
 }
