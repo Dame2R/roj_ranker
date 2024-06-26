@@ -28,7 +28,7 @@ header {
     padding: 10px 20px;
     z-index: 1000; /* Stellen Sie sicher, dass der Header über anderen Elementen schwebt */
     width: 100%;
-    text-align: center;
+    text-align: justify;
     margin-bottom: 20px;
 }
 
