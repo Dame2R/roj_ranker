@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const surveyHeading = document.querySelector('.survey h2');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= surveyHeading.offsetTop - 50) {
+            surveyHeading.style.position = 'sticky';
+            surveyHeading.style.top = '0';
+        } else {
+            surveyHeading.style.position = 'static';
+        }
+    });
+    
     const questions = [
         { id: 'question1', feedbackId: 'feedback1', requiredValue: 5, feedbackMessage: 'Bist du geistes?' },
         { id: 'question2', feedbackId: 'feedback2', requiredValue: 4, feedbackMessage: 'Du bist so lost..' },
